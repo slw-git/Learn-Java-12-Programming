@@ -120,6 +120,7 @@ public class PrimitiveTypes {
     private static void newInJava12(){
 
         System.out.println("\nNew compact number format:");
+        System.out.println("\nNew compact number format, fi-FI local:");
         Locale finnish = new Locale("fi", "FI");
         NumberFormat fmtLong= NumberFormat.getCompactNumberInstance(finnish, NumberFormat.Style.LONG);
         NumberFormat fmtShort= NumberFormat.getCompactNumberInstance(finnish, NumberFormat.Style.SHORT);
