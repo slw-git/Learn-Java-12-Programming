@@ -7,7 +7,7 @@ public class PrimitiveTypes {
 
     public static void main(String... args){
 
-        System.out.println("Hello, world!");
+        System.out.println("Hello, world!!!!");
         charType();
         minMax();
         casting();
@@ -120,9 +120,13 @@ public class PrimitiveTypes {
     private static void newInJava12(){
 
         System.out.println("\nNew compact number format:");
-        NumberFormat fmt = NumberFormat.getCompactNumberInstance(Locale.US, NumberFormat.Style.SHORT);
-        System.out.println(fmt.format(42_000));      //prints: 42K
-        System.out.println(fmt.format(42_000_000));  //prints: 42M
+        Locale finnish = new Locale("fi", "FI");
+        NumberFormat fmtLong= NumberFormat.getCompactNumberInstance(finnish, NumberFormat.Style.LONG);
+        NumberFormat fmtShort= NumberFormat.getCompactNumberInstance(finnish, NumberFormat.Style.SHORT);
+        System.out.println(fmtShort.format(42_000));      //prints: 42K
+        System.out.println(fmtShort.format(42_000_000));  //prints: 42M
+        System.out.println(fmtLong.format(42_000));      //prints: 42K
+        System.out.println(fmtLong.format(42_000_000));  //prints: 42M
 
         NumberFormat fmtP = NumberFormat.getPercentInstance();
         System.out.println(fmtP.format(0.42));       //prints: 42%
